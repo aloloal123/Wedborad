@@ -12,11 +12,23 @@
     <h1 style="text-align: center;">Webboard KakKak</h1>
     <hr>
     <div style="text-align: center;">
-        เข้าสู่ระบบด้วย<br>
-        Login = <?php echo $_POST['login'];?><br>
-        Password = <?php echo $_POST['pwd']; ?><br>
+    <?php
+    $u = $_POST['login'];
+    $p = $_POST['pwd'];
+    if($u == "admin" && $p == "ad1234"){
+        echo"ยินดีต้อนรับคุณ ADMIN<br>";
+    }
+    else if($u == "member" && $p == "mem1234"){
+        echo"ยินดีต้อนรับคุณ MEMBER<br>";
+    }
+    else{
+        echo"ชื่อบัญชีหรือรหัสผ่านไม่ถูกต้อง<br>";
+    }
+    ?>
+    <a href="index.php">กลับไปยังหน้าหลัก</a>
+        
     </div>
-   
+  
 </body>
 
 </html>
