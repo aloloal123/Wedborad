@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,6 +9,12 @@
 </head>
 
 <body>
+<?php
+    session_start();
+    if(isset($_SESSION['id'])){
+        header("Location:index.php");
+    }
+    ?>
 
     <h1 style="text-align: center;">Webboard KakKak</h1>
     <hr>
@@ -16,9 +23,15 @@
     $u = $_POST['login'];
     $p = $_POST['pwd'];
     if($u == "admin" && $p == "ad1234"){
+        $_SESSION['usename'] = 'admin';
+        $_SESSION['role'] = 'a';
+        $_SESSION['id'] = session_id();
         echo"ยินดีต้อนรับคุณ ADMIN<br>";
     }
     else if($u == "member" && $p == "mem1234"){
+        $_SESSION['usename'] = 'member';
+        $_SESSION['role'] = 'm';
+        $_SESSION['id'] = session_id();
         echo"ยินดีต้อนรับคุณ MEMBER<br>";
     }
     else{
