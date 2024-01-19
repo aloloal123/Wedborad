@@ -1,3 +1,9 @@
+<?php
+    session_start();
+    if(isset($_SESSION['id'])){
+        header("Location:index.php");
+    }
+    ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,12 +12,7 @@
     <title>register</title>
 </head>
 <body>
-<?php
-    session_start();
-    if(isset($_SESSION['id'])){
-        header("Location:index.php");
-    }
-    ?>
+
     <h1 style="text-align: center;">สมัครสมาชิก</h1>
     <hr>
     <table style="border: 2px solid black; width: 40%;" align="center">

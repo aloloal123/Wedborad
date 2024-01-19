@@ -1,4 +1,9 @@
-<?php session_start(); ?>
+<?php
+    session_start();
+    if(isset($_SESSION['id'])){
+        header("Location:index.php");
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,12 +14,7 @@
 </head>
 
 <body>
-<?php
-    session_start();
-    if(isset($_SESSION['id'])){
-        header("Location:index.php");
-    }
-    ?>
+
 
     <h1 style="text-align: center;">Webboard KakKak</h1>
     <hr>

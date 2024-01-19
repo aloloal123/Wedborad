@@ -1,3 +1,9 @@
+<?php
+    session_start();
+    if (!isset($_SESSION['id'])) {
+        header("Location:index.php");
+        die();
+    } ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,12 +12,7 @@
     <title>Document</title>
 </head>
 <body>
-    <?php
-    session_start();
-    if(isset($_SESSION['id'])){
-        header("Location:index.php");
-    }
-    ?>
+  
     <h1 style="text-align: center;">Webboard</h1>
     <hr>
     <div style="text-align: center;">
